@@ -14,10 +14,10 @@ export async function getStaticProps (context) {
 export async function getStaticPaths(){
   const recipes = await getAllRecipesDetails();
   return {
-    fallback: true,
+    fallback: false,
     paths: recipes.map(recipe=>({
       params: {
-        recipeId: `${recipe.id }`
+        recipeId: `${recipe.id}`
       }
     })
     )
