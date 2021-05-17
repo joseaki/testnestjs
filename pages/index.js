@@ -5,7 +5,7 @@ import RecipeList from "../components/recipeList";
 
 export async function getStaticProps(){
   const recipes = await getRecipes();
-  return ({props:{recipes}})
+  return ({props:{recipes}, revalidate: 10})
 }
 
 export default function Home(props) {
